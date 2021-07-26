@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/magic-mouse.css">
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,300;1,500&family=Cormorant+Garamond:wght@300;600&family=Roboto+Mono:wght@300;700&family=Roboto:ital,wght@0,300;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+    <!-- META -->
+    <title>Juan Melnechuk | Portfolio</title>
+</head>
+<body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
+    <div id="stext">
+        <h2 id="circle">SELECCIONA UNA OPCIÓNㅤㅤ</h2>
+    </div>
+    <img src="img/close2.svg" id="close2" class="magic-hover ahover" onclick="close2()">
+    <div id="this">
+        <h2>portfolio v3</h2>
+        <h3>+10hs de código. <br>
+            +5 tazas de café <br>
+            Tecnologías usadas <br> ThreeJs + parallax (fondo) <br> jQuery.
+        </h3>
+    </div>
+    <div class="tools" id="tools">
+        <h3></h3>
+        <h2 onclick="faq11(1)">Este proyecto</h2>
+        <a href="cv.pdf" download onclick="faq11(2)">Curriculum Vitae</a>
+        <h2 onclick="closex(1)">Cerrar</h2>
+    </div>
+    <div class="faq1 menuHover" id="faq1">
+    </div>
+    <div class="container">
+        <div class="acceder">
+            <h2 class="magic-hover" id="gointro" onclick="togglestart()">ACCEDER</h2>
+        </div>
+        <!-- NAVBAR -->
+        <div class="navbar" id="navbar">
+            <div id="bar"></div>
+            <div class="top--col">
+                <h2 class="magic-hover" onclick="faq(1)">||</h2>
+            </div>
+            <div class="bot--col">
+                <h2 class="magic-hover" id="barr" onclick="faqq()">|</h2>
+            </div>
+        </div>
+        <!-- HOME -->
+        <div class="containerex" id="s--c">
+            <div class="l--brand">
+                <h3>PROGRAMADOR FRONT-END</h3>
+                <h2>JUAN</h2>
+            </div>
+            <div class="r--brand">
+                <h2>MELNECHUK</h2>
+                <h3>PORTFOLIO 2021</h3>
+            </div>
+            <div class="xmenu">
+                <h2 class="magic-hover" onclick="OpenMenu(1)">SOBRE MÍ</h2>
+                <h2 class="magic-hover" onclick="OpenMenu(2)">TRABAJOS</h2>
+                <h2 class="magic-hover" onclick="OpenMenu(3)">CONTÁCTAME</h2>
+            </div>
+        </div>
+        <img src="img/close.svg" id="close" class="closeimg magic-hover ahover" onclick="CloseMenu(viewing)">
+        <div class="aboutmenu" id="amenu">
+            <div class="aboutbox">
+                <h2>HOLA.</h2>
+                <h5><span>[</span>DESLIZÁ HACIA ABAJO<span>]</span></h5>
+                <h3>ㅤ</h3>
+                <h3>Soy Juan Melnechuk, un chico de 17 años con un excelente manejo del desarrollo front-end.
+                    Actualmente estoy terminando mis estudios de secundaria y estoy buscando financiamiento para
+                    cursar la universidad.
+                </h3>
+                <h3>Soy de Misiones, Argentina. <br>
+                Apasionado por la programación, decidí iniciarme en el desarrollo web, rumbo por el cual llevo más de 6 meses.
+                Me considero capaz de realizar cualquier tipo de página y me adapto muy bien a cualquier estilo y tipo de web.</h3>
+                <h3>Tengo un gran conocimiento en todo lo que abarque el dinamismo de una web, animaciones, interacciones con el usuario, etc.
+                Actualmente me encuentro utilizando las tecnologías más eficientes y estables que existen para ello, tales como GSAP,
+                VueJS (framework similar a ReactJS o Angular), jQuery, BootStrap, ThreeJS (para el renderizado web 3d), entre otros.
+                </h3>
+            </div>
+        </div>
+        <div class="bmenu" id="bmenu">
+            <h2 class="dd">TRABAJOS</h2>
+            <div class="projectsbox">
+                <div class="pbox">
+                    <div class="imgp">
+                        <h5>EcoHouse</h5>
+                    </div>
+                    <h2>EcoHouse Demo</h2>
+                    <h3>Web destinada a la defensa del medio ambiente y la concientización social.</h3>
+                    <a href="https://ssxarg.github.io/demoecohouse" class="magic-hover">VISITAR</a>
+                </div>
+                <div class="pbox">
+                    <div class="imgp">
+                        <h5>exPortfolio</h5>
+                    </div>
+                    <h2>Portfolio V2</h2>
+                    <h3>La antigua versión de mi portfolio.</h3>
+                    <a href="http://ssxarg.github.io/portfolioex" class="magic-hover">VISITAR</a>
+                </div>
+                <div class="pbox">
+                    <div class="imgp">
+                        <h5>Demo</h5>
+                    </div>
+                    <h2>Apple Presents iPhoneX</h2>
+                    <h3>Un demo para trabajar diferentes aspectos de las vistas de ordenador que quiero perfeccionar.</h3>
+                    <a href="https://ssxarg.github.io/appleiphonex" class="magic-hover">VISITAR</a>
+                </div>
+            </div>
+        </div>
+        <div id="cmenu" class="cmenu">
+            <h2>CONTACTO</h2>
+            <h3>Puedes encontrarme en</h3>
+            <div class="socialmedia">
+                <img src="img/call.svg" class="parallaxHover magic-hover" onclick="card(1)">
+                <img src="img/whatsapp.svg" class="parallaxHover magic-hover" onclick="card(2)">
+                <img src="img/ig.svg" class="parallaxHover magic-hover" onclick="card(3)">
+            </div>
+            <div class="card">
+                <div id="sh">
+                    <h2>+54 9 0376 437-5921</h2>
+                    <h2>+54 9 0376 437-5921</h2>
+                    <h2>+54 9 0376 437-5921</h2>
+                </div>
+            </div>
+        </div>
+        <div id="bgmodel"></div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/three.min.js"></script>
+    <script src="js/GLTFLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/MotionPathPlugin.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/mouse.js"></script>
+    <script>
+        var c2ex = 0;
+        function close2(){
+            if(c2ex == 1){
+                document.getElementById('tools').style.bottom="20vw";//mostrar
+                document.getElementById('this').style.bottom="-50vw";
+                document.getElementById('close2').style.bottom="-10vw";
+            } else {
+
+            }
+        }
+    </script>
+    <script>
+        const faq1 = document.getElementById('faq1');
+        const faq2 = document.getElementById('faq2');
+        function faq11(x){
+            if(x == 1){
+                document.getElementById('tools').style.bottom="-50vw";//mostrar
+                document.getElementById('this').style.bottom="5vw";
+                document.getElementById('close2').style.bottom="10vw";
+                c2ex = 1;
+            } else {
+
+            }
+        }
+        var r = 0;
+        function faqq(){
+            r+=90;
+            document.getElementById('barr').style.transform="rotate("+r+"deg)";
+            changeilum();
+        }
+        function closex(x){
+            if(x==1){
+                faq1.style.width="1vw";
+                faq1.style.height="1vw";
+                document.getElementById('tools').style.bottom="-50vw";
+                
+            } else {
+                faq2.style.width="1vw";
+                faq2.style.height="1vw";
+                document.getElementById('tools2').style.bottom="-50vw";
+            }
+        }
+    </script>
+    <script>
+        function faq(x){
+            if(x == 1){
+                faq1.style.width="270vw";
+                faq1.style.height="270vw";
+                document.getElementById('tools').style.bottom="20vw";
+                faq1.style.zIndex="1000000";
+            }
+            if(x == 2){
+                //segundo menu
+            }
+        }
+    </script>
+    <script>
+        const sh = document.getElementById('sh');
+            function card(x){
+                if(x == 1){
+                    sh.style.marginTop ="0vw";
+                }
+                if(x == 2){
+                    sh.style.marginTop ="-8vw";
+                }
+                if(x == 3){
+                    sh.style.marginTop ="-15vw";
+                }
+            }
+    </script>
+    <script>
+        var tab = 0;
+        var viewing = 0;
+        const intro = document.getElementById('s--c');
+        const equis = document.getElementById('close');
+        const sM = document.getElementById('amenu');
+        const tM = document.getElementById('bmenu');
+        const cM = document.getElementById('cmenu');
+        function OpenMenu(x){
+            tab = 1;
+            viewing = x;
+            intro.style.opacity="0%";
+            setTimeout(abremenu(x), 1000);
+        }
+        function abremenu(x){
+            equis.style.right="5vw";
+            document.getElementById('navbar').style.left="-5.1vw";
+            document.getElementById('bar').style.left="-0.1vw";
+            if(x == 1){
+                sM.style.zIndex="200";
+                sM.style.opacity="100%";
+                document.getElementById('circle').innerHTML="SOBRE MI ㅤㅤSOBRE MI";
+                circleup();
+            }
+            if(x == 2){
+                tM.style.zIndex="2";
+                tM.style.opacity="100%";
+                document.getElementById('circle').innerHTML="TRABAJOS  ㅤㅤTRABAJOS";
+                circleup();
+            }
+            if(x == 3){
+                cM.style.zIndex="2";
+                cM.style.opacity="100%";
+                document.getElementById('circle').innerHTML="CONTACTO ㅤㅤCONTACTO";
+                circleup();
+            }
+        }
+        //CLOSE FUNCS
+        function CloseMenu(x){
+            intro.style.opacity="100%";
+            document.getElementById('navbar').style.left="0vw";
+            document.getElementById('bar').style.left="5.1vw";
+            setTimeout(cerrarmenu(x), 1000);
+            if(x == 1){
+                equis.style.right="-5vw";
+            }
+            if(x == 2){
+                equis.style.right="-5vw";
+            }
+            if(x == 3){
+                equis.style.right="-5vw";
+            }
+        }
+        function cerrarmenu(x){
+            if(x == 1){
+                sM.style.opacity="0%";
+                sM.style.zIndex="-1";
+            }
+            if(x == 2){
+                tM.style.opacity="0%";
+                tM.style.zIndex="-1";
+            }
+            if(x == 3){
+                cM.style.opacity="0%";
+                cM.style.zIndex="-1";
+            }
+        }
+    </script>
+    <script>
+        circle = document.getElementById("circle")
+        circlearray = circle.textContent.split('')
+        circle.textContent = ''
+        for(var i = 0; i< circlearray.length; i++){
+            circle.innerHTML += '<span style="transform:rotate('+((i+1)*15)+'deg)">'+ circlearray[i]+'</span>'
+        }
+        function circleup(){
+            circle = document.getElementById("circle")
+            circlearray = circle.textContent.split('')
+            circle.textContent = ''
+            for(var i = 0; i< circlearray.length; i++){
+                circle.innerHTML += '<span style="transform:rotate('+((i+1)*15)+'deg)">'+ circlearray[i]+'</span>'
+            }
+        }
+    </script>
+    <script>
+        options = {
+            "cursorOuter": "disable",
+            "hoverEffect": "pointer-overlay",
+            "hoverItemMove": false,
+            "defaultCursor": false,
+            "outerWidth": 30,
+            "outerHeight": 30
+        }; 
+    magicMouse(options);
+    </script>
+    <script>
+        function togglestart(){
+            document.getElementById('gointro').style.marginTop="10vh";
+            setTimeout(start3d, 1000);
+        }
+    </script>
+    <script> //changeilum()
+    var directionalLight;
+    var directionalLight2;
+    var scene;
+    var il = 0;
+    function changeilum(){
+        if(il == 0) {
+            scene.remove( directionalLight2);
+            directionalLight2 = new THREE.DirectionalLight( 0x0095FF, 3.5 );
+            scene.add( directionalLight2 );
+            il = 1;
+        } else {
+            scene.remove( directionalLight2);
+            directionalLight2 = new THREE.DirectionalLight( 0xff0064, 3.5 );
+            scene.add( directionalLight2 );
+            il = 0;
+        }
+    }
+    function start3d(){
+        document.getElementById('navbar').style.left="0vw";
+        document.getElementById('bar').style.left="5.1vw";
+        document.getElementById('bgmodel').style.opacity="10%";
+        document.getElementById('s--c').style.opacity="100%";
+        scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight);
+        camera.position.z = 1;
+        camera.position.y = 1;
+
+        var renderer = new THREE.WebGLRenderer({alpha: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('bgmodel').appendChild(renderer.domElement);
+
+        directionalLight = new THREE.DirectionalLight( 0xc8cdd2 , 0.5 );
+        scene.add( directionalLight );
+        directionalLight2 = new THREE.DirectionalLight( 0xff0064, 3.5 );
+        scene.add( directionalLight2 );
+
+        directionalLight2.position.set(35, 2, 1);
+
+        var model;
+        
+        const loader = new THREE.GLTFLoader();
+        loader.load('img/bgmodel.glb', function(gltf){
+            model = gltf.scene.children[0];
+            model.scale.set(0.50, 0.50, 0.50);
+            scene.add(model);
+            renderer.render(scene, camera);
+        });
+        function animate(){
+                requestAnimationFrame(animate);
+                renderer.render(scene, camera);
+        }
+        animate();
+        window.addEventListener('resize', function()   {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+            renderer.render(scene, camera);
+        });
+
+        document.addEventListener("mousemove", parallax3d);
+        function parallax3d(e){
+            const x = (window.innerWidth - e.pageX) / 100;
+            const y = (window.innerHeight - e.pageY) / 100;
+            model.rotation.y = (x/10);
+            model.rotation.x = (y/5);
+            renderer.render(scene, camera);
+        }
+    }
+    </script>
+</body>
+</html>
