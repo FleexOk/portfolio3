@@ -86,6 +86,7 @@ function magicMouse(options) {
       if(passedIntro == 1){
       pointerDOM.style.color="#191919";
       pointerDOM.style.border="1px solid #191919";
+      pointerText.style.color="#191919";
       }
     });
     var menuHover = document.querySelectorAll(".menuHover");
@@ -93,6 +94,7 @@ function magicMouse(options) {
       item.addEventListener("mousemove", e => {
         pointerDOM.style.border="1px solid #f9f9f9";
         pointerDOM.style.color="#f9f9f9";
+        pointerText.style.color="#f9f9f9";
       });
     });
     var parallaxH = document.querySelectorAll(".parallaxHover");

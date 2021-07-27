@@ -162,9 +162,9 @@
             </div>
         </div>
         <div id="bgmodel"></div>
-        <img src="img/ex.png" id="imgbg">
-        <img src="img/parallax.png" id="bg3d">
     </div>
+    <img src="img/ex.png" id="imgbg">
+    <img src="img/parallax.png" id="bg3d">
     <!-- Scripts -->
     <script src="js/mouse.js"></script>
     <script>
@@ -391,7 +391,8 @@
             setTimeout(start, 1000);
         }
         function start(){
-            document.getElementById("stext").style.zIndex="1000";
+            document.getElementById("stext").style.zIndex="100";
+            document.getElementById("stext").style.color="#191919";
             document.getElementById("magicPointer").style.border="1px solid #191919";
             document.getElementById("magicPointer").style.color="#191919";
             passedIntro = 1;
