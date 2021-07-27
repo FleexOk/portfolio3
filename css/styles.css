@@ -552,4 +552,7 @@ body {
     font-size: 3vh;
     width: 80vw;
   }
+  #circle {
+    display: none;
+  }
 }
