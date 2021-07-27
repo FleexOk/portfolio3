@@ -503,6 +503,9 @@ body {
   .pmenu {
     display: block;
   }
+  #bgmodel {
+    display: none;
+  }
   #tools {
     display: none;
   }
