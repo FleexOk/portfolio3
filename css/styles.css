@@ -503,6 +503,9 @@ body {
   .pmenu {
     display: block;
   }
+  #bgmodel {
+    display: none;
+  }
   #tools {
     display: none;
   }
@@ -548,5 +551,8 @@ body {
     color: #c8cdd2;
     font-size: 3vh;
     width: 80vw;
+  }
+  #circle {
+    display: none;
   }
 }
