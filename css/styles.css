@@ -444,14 +444,14 @@ body {
 }
 .overflowX h2 {
   color: #c8cdd2;
-  font-size: 50px;
+  font-size: 40px;
   margin-top: 10vh;
   transition: 0.9s ease-in-out;
 }
 .overflowX a {
   text-decoration: none;
   color: #c8cdd2;
-  font-size: 50px;
+  font-size: 40px;
   transition: 0.9s ease-in-out;
   display: block;
   margin-top: 10vh;
@@ -469,7 +469,7 @@ body {
 }
 .overflowXt h3 {
   color: #c8cdd2;
-  font-size: 20px;
+  font-size: 10px;
   margin-top: 5vh;
   transition: 0.9s ease-in-out;
 }
