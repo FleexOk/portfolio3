@@ -35,7 +35,8 @@ function magicMouse(options) {
       document.body.appendChild(newPointerDOM);
       var pointerDOM = document.getElementById("magicPointer");
       var pointerText = document.getElementById("stext");
-      document.getElementById("magicPointer").innerHTML="•"
+      document.getElementById("magicPointer").innerHTML="•";
+      pointerDOM.style.color="#f9f9f9";
     }
 
     if (cursorDOM) {
@@ -67,34 +68,31 @@ function magicMouse(options) {
     });
     document.addEventListener("contextmenu", e => {
       e.preventDefault();
-      //if(inNews == true){
-
-      //}
     });
     document.addEventListener("mousedown", event => {
-      //if(inNews == false) {
       if(IsOnHover != true)
-      pointerDOM.style.color="#ff0064";
-      
-      //}
+      pointerDOM.style.width="30px";
+      pointerDOM.style.height="30px";
     });
-    document.addEventListener("mouseup", event => {
-      if(IsOnHover != true)
-      pointerDOM.style.color="#f9f9f9";
+    document.addEventListener("mouseup", event => { //CLICK O PRESS
+      if(IsOnHover != true) {
+      pointerDOM.style.width="50px";
+      pointerDOM.style.height="50px";
+      }
     });
     //Hover effects :
-    var sch = document.querySelectorAll(".container");
-    sch.forEach((item, i) => {
-      item.addEventListener("mousemove", e => {
-        pointerDOM.style.border="1px solid #f9f9f9";
-        pointerDOM.style.color="#f9f9f9";
-      });
+    var sch = document.querySelector(".container");
+    sch.addEventListener("mouseenter", e => {
+      if(passedIntro == 1){
+      pointerDOM.style.color="#191919";
+      pointerDOM.style.border="1px solid #191919";
+      }
     });
     var menuHover = document.querySelectorAll(".menuHover");
     menuHover.forEach((item, i) => {
       item.addEventListener("mousemove", e => {
-        pointerDOM.style.border="1px solid #191919";
-        pointerDOM.style.color="#191919";
+        pointerDOM.style.border="1px solid #f9f9f9";
+        pointerDOM.style.color="#f9f9f9";
       });
     });
     var parallaxH = document.querySelectorAll(".parallaxHover");
@@ -123,10 +121,9 @@ function magicMouse(options) {
     var hoverEls = document.querySelectorAll(".magic-hover");
     hoverEls.forEach((item, i) => {
       item.addEventListener("mouseenter", event => {
-        pointerDOM.style.width="35px";
-        pointerDOM.style.height="35px";
+        pointerDOM.style.width="30px";
+        pointerDOM.style.height="30px";
         pointerDOM.style.fontSize="25px";
-        pointerDOM.style.color="#ff0064";
         IsOnHover = true;
         switch (options.hoverEffect) {
           case "circle-move":
@@ -149,7 +146,7 @@ function magicMouse(options) {
         pointerDOM.style.width="50px";
         pointerDOM.style.height="50px";
         pointerDOM.style.fontSize="10px";
-        pointerDOM.style.color="#f9f9f9";
+        //pointerDOM.style.color="#191919";
         IsOnHover = false;
         switch (options.hoverEffect) {
           case "circle-move":

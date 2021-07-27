@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/magic-mouse.css">
     <!-- FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,300;1,500&family=Cormorant+Garamond:wght@300;600&family=Roboto+Mono:wght@300;700&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,300;1,500&family=Italiana&family=Cormorant+Garamond:wght@300;600&family=Roboto+Mono:wght@300;700&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
     <!-- META -->
     <title>Juan Melnechuk | Portfolio</title>
 </head>
@@ -16,39 +16,42 @@
     <div id="stext">
         <h2 id="circle">SELECCIONA UNA OPCIÓNㅤㅤ</h2>
     </div>
-    <img src="img/menuc.svg" class="pmenu" id="pmenu" onclick="displaymenu()">
-    <img src="img/close.svg" id="pclose" onclick="hidemenu(0)">
+    <img src="img/menuc.svg" class="pmenu" id="pmenu" onclick="DisplayMobileOptions()">
+    <img src="img/close.svg" id="pclose" onclick="HideMobileOptions()">
     <div class="phone--menu" id="phone--menu">
         <div class="overflowX">
-        <h2 onclick="OpenMenu(1, 1); hidemenu(1)">Sobre mí</h2>
+        <h2 onclick="OpenMobileMenu(1);">SOBRE MÍ</h2>
         </div>
 
         <div class="overflowX">
-        <h2 onclick="OpenMenu(2, 1); hidemenu(1)">Trabajos</h2>
+        <h2 onclick="OpenMobileMenu(2);">TRABAJOS</h2>
         </div>
 
         <div class="overflowX">
-        <h2 onclick="hidemenu(1); faq11(2)">Este proyecto</h2>
+        <h2 onclick="OpenMobileMenu(3);">ESTE PROYECTO</h2>
         </div>
 
         <div class="overflowX" id="aCase">
-            <a href="cv.pdf" download>Curriculum</a>
+            <a href="cv.pdf" download>CURRICULUM</a>
         </div>
 
         <div class="overflowX" id="breakline">
-            <h2>Contacto</h2>
+            <h2>CONTACTO</h2>
         </div>
 
         <div class="overflowXt">
-            <h3>MAIL @jmel.business1@gmail.com</h3>
+            <h3 onclick="window.open('mailto:support@example.com')">EMAIL</h3>
         </div>
 
         <div class="overflowXt">
-            <h3>GIT SSxArg</h3>
+            <h3 onclick="window.open('https://github.com/SSxArg/')">GITHUB</h3>
         </div>
 
         <div class="overflowXt">
-            <h3>IG  @juaan.xs</h3>
+            <h3 onclick="window.open('https://www.instagram.com/juaan.xs/')">INSTAGRAM</h3>
+        </div>
+        <div class="overflowXt">
+            <h3 onclick="window.open('https://www.linkedin.com/in/juan-manuel-melnechuk-3828ab213/')">LINKEDIN</h3>
         </div>
     </div>
     <img src="img/close2.svg" id="close2" class="magic-hover ahover" onclick="close2()">
@@ -63,7 +66,7 @@
         <h3></h3>
         <h2 onclick="faq11(1)">Este proyecto</h2>
         <a href="cv.pdf" download>Curriculum Vitae</a>
-        <h2 onclick="closex(1)">Cerrar</h2>
+        <h2 onclick="HideDesktopMenu(4)">Cerrar</h2>
     </div>
     <div class="faq1 menuHover" id="faq1">
     </div>
@@ -75,10 +78,7 @@
         <div class="navbar" id="navbar">
             <div id="bar"></div>
             <div class="top--col">
-                <h2 class="magic-hover" onclick="faq(1)">||</h2>
-            </div>
-            <div class="bot--col">
-                <h2 class="magic-hover" id="barr" onclick="faqq()">|</h2>
+                <h2 class="magic-hover" onclick="OpenDesktopMenu(4)">||</h2>
             </div>
         </div>
         <!-- HOME -->
@@ -92,12 +92,12 @@
                 <h3>PORTFOLIO 2021</h3>
             </div>
             <div class="xmenu">
-                <h2 class="magic-hover" onclick="OpenMenu(1, 0)">SOBRE MÍ</h2>
-                <h2 class="magic-hover" onclick="OpenMenu(2, 0)">TRABAJOS</h2>
-                <h2 class="magic-hover" onclick="OpenMenu(3, 0)">CONTÁCTAME</h2>
+                <h2 class="magic-hover" onclick="OpenDesktopMenu(1);">SOBRE MÍ</h2>
+                <h2 class="magic-hover" onclick="OpenDesktopMenu(2);">TRABAJOS</h2>
+                <h2 class="magic-hover" onclick="OpenDesktopMenu(3);">CONTÁCTAME</h2>
             </div>
         </div>
-        <img src="img/close.svg" id="close" class="closeimg magic-hover ahover" onclick="CloseMenu(viewing)">
+        <img src="img/close.svg" id="close" class="closeimg magic-hover ahover" onclick="HideDesktopMenu()">
         <div class="aboutmenu" id="amenu">
             <div class="aboutbox">
                 <h2>HOLA.</h2>
@@ -162,209 +162,203 @@
             </div>
         </div>
         <div id="bgmodel"></div>
+        <img src="img/ex.png" id="imgbg">
+        <img src="img/parallax.png" id="bg3d">
     </div>
     <!-- Scripts -->
-    <script src="js/three.min.js"></script>
-    <script src="js/GLTFLoader.js"></script>
-    <script src="js/OrbitControls.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>	
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/MotionPathPlugin.min.js"></script>
     <script src="js/mouse.js"></script>
-    <script>
-        const optionss = document.querySelectorAll('.overflowX > h2, .overflowXt > h3, .overflowX > a');
-
-        function displaymenu(){
-            optionss.forEach((item, i) => {
-                item.style.marginTop="0vw";
-            });
-            document.getElementById('amenu').style.display="none";
-            document.getElementById('bmenu').style.display="none";
-            document.getElementById('this').style.display="none";
-
-            document.getElementById('pmenu').style.transform= "scale(0)";
-            document.getElementById('pmenu').style.zIndex="-1";
-            document.getElementById('pclose').style.zIndex="100000000";
-            document.getElementById('pclose').style.transform="scale(1)";
-            document.getElementById('s--c').style.opacity="0%";
-            document.getElementById('phone--menu').style.zIndex="100000";
-        }
-        function hidemenu(x){
-            optionss.forEach((item, i) => {
-                item.style.marginTop="10vh";
-            });
-            document.getElementById('pmenu').style.transform= "scale(1)";
-            document.getElementById('pclose').style.transform="scale(0)";
-            document.getElementById('pmenu').style.zIndex="1000000000";
-            document.getElementById('pclose').style.zIndex="-1";
-            if(x == 0){
-            document.getElementById('s--c').style.opacity="100%";
-            }
-            document.getElementById('phone--menu').style.zIndex="-1";
-        }
-    </script>
-    <script>
-        var c2ex = 0;
-        function close2(){
-            if(c2ex == 1){
-                document.getElementById('tools').style.bottom="20vw";//mostrar
-                document.getElementById('this').style.bottom="-50vw";
-                document.getElementById('close2').style.bottom="-10vw";
-            } else {
-
-            }
-        }
-    </script>
     <script>
         const faq1 = document.getElementById('faq1');
         const faq2 = document.getElementById('faq2');
-        function faq11(x){
-            document.getElementById('this').style.display="";
-            intro.style.opacity="0%";
-            if(x == 1){
-                document.getElementById('tools').style.bottom="-50vw";//mostrar
-                document.getElementById('this').style.bottom="5vw";
-                document.getElementById('close2').style.bottom="10vw";
-                c2ex = 1;
-            }
-            if(x == 2) { //Mobile
-                document.getElementById('this').style.bottom="50vh";
-                
-                c2ex = 1;
-            }
-        }
-        var r = 0;
-        function faqq(){
-            r+=90;
-            document.getElementById('barr').style.transform="rotate("+r+"deg)";
-            changeilum();
-        }
-        function closex(x){
-            if(x==1){
-                faq1.style.width="1vw";
-                faq1.style.height="1vw";
-                document.getElementById('tools').style.bottom="-50vw";
-                
-            } else {
-                faq2.style.width="1vw";
-                faq2.style.height="1vw";
-                document.getElementById('tools2').style.bottom="-50vw";
-            }
-        }
-    </script>
-    <script>
-        function faq(x){
-            if(x == 1){
-                faq1.style.width="270vw";
-                faq1.style.height="270vw";
-                document.getElementById('tools').style.bottom="20vw";
-                faq1.style.zIndex="1000000";
-            }
-            if(x == 2){
-                //segundo menu
-            }
-        }
-    </script>
-    <script>
         const sh = document.getElementById('sh');
-            function card(x){
-                if(x == 1){
-                    sh.style.marginTop ="0vw";
-                }
-                if(x == 2){
-                    sh.style.marginTop ="-8vw";
-                }
-                if(x == 3){
-                    sh.style.marginTop ="-15vw";
-                }
-            }
-    </script>
-    <script>
-        var tab = 0;
-        var viewing = 0;
+        
         const intro = document.getElementById('s--c');
         const equis = document.getElementById('close');
+
+        const tools = document.getElementById('tools');
+
         const sM = document.getElementById('amenu');
         const tM = document.getElementById('bmenu');
         const cM = document.getElementById('cmenu');
-        function OpenMenu(x, z){
-            tab = 1;
-            viewing = x;
+        const pM = document.getElementById('pmenu');
+        const pMenu = document.getElementById('phone--menu');
+        const thisproject = document.getElementById('this');
+
+        const backgroundParallax = document.getElementById('bg3d');
+
+        const pMHide = document.getElementById('pclose');
+
+        const navbar = document.getElementById('navbar');
+
+        const closex2 = document.getElementById('close2');
+        var circle = document.getElementById('circle');
+        var c2ex = 0;
+        var passedIntro = 0;
+    // ::::::: Desktop Functions ::::::: //
+        var ViewingThis = 0; // 1 > Sobre mi, 2 > Trabajos, etc
+        function OpenDesktopMenu(menu){
+            switch(menu){
+                case 1: // :: Sobre mí :: 
+
+                    sM.style.zIndex="200";
+                    sM.style.opacity="100%";
+                    sM.style.display="";
+                    circle.innerHTML="SOBRE MI ㅤㅤSOBRE MI";
+                    circleup();
+                    break;
+
+                case 2: // :: Trabajos :: 
+                    tM.style.zIndex="2";
+                    tM.style.opacity="100%";
+                    tM.style.display="";
+                    circle.innerHTML="TRABAJOS  ㅤㅤTRABAJOS";
+                    circleup();
+                    break;
+
+                case 3: // :: Contactame :: 
+
+                    cM.style.zIndex="2";
+                    cM.style.opacity="100%";
+                    circle.innerHTML="CONTACTO ㅤㅤCONTACTO";
+                    circleup();
+                    break;
+
+                case 4: // :: LeftMenu :: 
+                    faq1.style.width="270vw";
+                    faq1.style.height="270vw";
+                    faq1.style.top="-10vw";
+                    tools.style.bottom="20vw";
+                    faq1.style.zIndex="1000000";
+                    break;
+            }
             intro.style.opacity="0%";
-            setTimeout(abremenu(x, z), 1000);
-        }
-        function abremenu(x, z){
-            if(z == 0) {
+            if(menu < 4)
             equis.style.right="5vw";
-            }
-            document.getElementById('navbar').style.left="-5.1vw";
+            navbar.style.left="-5.1vw";
             document.getElementById('bar').style.left="-0.1vw";
-            if(x == 1){
-                sM.style.zIndex="200";
-                sM.style.opacity="100%";
-                document.getElementById('amenu').style.display="";
-                document.getElementById('circle').innerHTML="SOBRE MI ㅤㅤSOBRE MI";
-                circleup();
-                if(z == 1){
-                    tM.style.opacity="0%";
-                    cM.style.opacity="0%";
-                }
-            }
-            if(x == 2){
-                tM.style.zIndex="2";
-                tM.style.opacity="100%";
-                document.getElementById('bmenu').style.display="";
-                document.getElementById('circle').innerHTML="TRABAJOS  ㅤㅤTRABAJOS";
-                circleup();
-                if(z == 1){
-                    sM.style.opacity="0%";
-                    cM.style.opacity="0%";
-                }
-            }
-            if(x == 3){
-                cM.style.zIndex="2";
-                cM.style.opacity="100%";
-                document.getElementById('circle').innerHTML="CONTACTO ㅤㅤCONTACTO";
-                circleup();
-                if(z == 1){
-                    sM.style.opacity="0%";
-                    tM.style.opacity="0%";
-                }
-            }
+            backgroundParallax.style.opacity="40%";
         }
-        //CLOSE FUNCS
-        function CloseMenu(x){
+
+        function HideDesktopMenu(menu){
             intro.style.opacity="100%";
-            document.getElementById('navbar').style.left="0vw";
+            backgroundParallax.style.opacity="100%";
+            navbar.style.left="0vw";
             document.getElementById('bar').style.left="5.1vw";
-            setTimeout(cerrarmenu(x), 1000);
-            if(x == 1){
-                equis.style.right="-5vw";
-            }
-            if(x == 2){
-                equis.style.right="-5vw";
-            }
-            if(x == 3){
-                equis.style.right="-5vw";
-            }
-        }
-        function cerrarmenu(x){
-            if(x == 1){
-                sM.style.opacity="0%";
-                sM.style.zIndex="-1";
-            }
-            if(x == 2){
-                tM.style.opacity="0%";
-                tM.style.zIndex="-1";
-            }
-            if(x == 3){
-                cM.style.opacity="0%";
-                cM.style.zIndex="-1";
+            equis.style.right="-5vw";
+
+            sM.style.opacity="0%";
+            tM.style.opacity="0%";
+            cM.style.opacity="0%";
+
+            sM.style.zIndex="-10000";
+            tM.style.zIndex="-10000";
+            cM.style.zIndex="-10000";
+
+            if(menu == 4){
+                faq1.style.width="1vw";
+                faq1.style.height="1vw";
+                tools.style.bottom="-50vw";
             }
         }
-    </script>
-    <script>
-        circle = document.getElementById("circle")
+    // ::::::: Mobile Functions ::::::: //
+    
+        function OpenMobileMenu(menu){
+            switch(menu){
+                case 1: 
+                    tM.style.opacity="0%";
+                    cM.style.opacity="0%";
+                    break;
+                case 2: 
+                    sM.style.opacity="0%";
+                    cM.style.opacity="0%";
+                    break;
+                case 3: 
+                    tM.style.opacity="0%";
+                    sM.style.opacity="0%";
+                    break;
+            }
+            HideMobileOptions();
+            OpenDesktopMenu(menu);
+        }
+
+        const optionss = document.querySelectorAll('.overflowX > h2, .overflowXt > h3, .overflowX > a');
+
+        function DisplayMobileOptions(){
+            optionss.forEach((item, i) => {
+                item.style.marginTop="0vw";
+            });
+            pM.style.transform= "scale(0)";
+            pM.style.zIndex="-1";
+
+            pMHide.style.zIndex="100000000";
+            pMHide.style.transform="scale(1)";
+
+            backgroundParallax.style.opacity="40%";
+            intro.style.opacity="0%";
+
+            pMenu.style.zIndex="1000000";
+
+            tM.style.opacity="0%";
+            sM.style.opacity="0%";
+            cM.style.opacity="0%";
+        }
+
+
+        function HideMobileOptions(){
+            optionss.forEach((item, i) => {
+                item.style.marginTop="10vh";
+            });
+
+            backgroundParallax.style.opacity="100%";
+
+            pM.style.transform= "scale(1)";
+            pM.style.zIndex="1000000000";
+
+            pMHide.style.transform="scale(0)";
+            pMHide.style.zIndex="-1";
+
+            intro.style.opacity="100%";
+            pMenu.style.zIndex="-1";
+        }
+
+
+        function close2(){
+            backgroundParallax.style.opacity="100%";
+            if(c2ex == 1){
+                tools.style.bottom="20vw";//mostrar
+                thisproject.style.bottom="-50vw";
+                closex2.style.bottom="-10vw";
+            } else {
+
+            }
+        }
+        function faq11(x){
+            thisproject.style.display="";
+            if(x == 1){
+                tools.style.bottom="-50vw";//mostrar
+                thisproject.style.bottom="5vw";
+                closex2.style.bottom="10vw";
+                c2ex = 1;
+            }
+            if(x == 2) { //Mobile
+                thisproject.style.bottom="50vh";
+                
+                c2ex = 1;
+            }
+        }
+        function card(x){
+            switch(x) {
+                case 1:
+                    sh.style.marginTop ="0vw";
+                    break;
+                case 2:
+                    sh.style.marginTop ="-9vw";
+                    break;
+                case 3:
+                    sh.style.marginTop ="-18vw";
+                    break;
+            }
+        }
         circlearray = circle.textContent.split('')
         circle.textContent = ''
         for(var i = 0; i< circlearray.length; i++){
@@ -378,8 +372,8 @@
                 circle.innerHTML += '<span style="transform:rotate('+((i+1)*15)+'deg)">'+ circlearray[i]+'</span>'
             }
         }
-    </script>
-    <script>
+
+        // MOUSE OPTIONS
         options = {
             "cursorOuter": "disable",
             "hoverEffect": "pointer-overlay",
@@ -388,87 +382,31 @@
             "outerWidth": 30,
             "outerHeight": 30
         }; 
-    magicMouse(options);
-    </script>
-    <script>
+        magicMouse(options);
+
         function togglestart(){
             document.getElementById('gointro').style.marginTop="10vh";
-            document.getElementById('pmenu').style.opacity="100%";
-            document.getElementById('pmenu').style.zIndex="10000";
-            setTimeout(start3d, 1000);
+            pM.style.opacity="100%";
+            pM.style.zIndex="10000";
+            setTimeout(start, 1000);
         }
-    </script>
-    <script> //changeilum()
-    var directionalLight;
-    var directionalLight2;
-    var scene;
-    var il = 0;
-    function changeilum(){
-        if(il == 0) {
-            scene.remove( directionalLight2);
-            directionalLight2 = new THREE.DirectionalLight( 0x0095FF, 3.5 );
-            scene.add( directionalLight2 );
-            il = 1;
-        } else {
-            scene.remove( directionalLight2);
-            directionalLight2 = new THREE.DirectionalLight( 0xff0064, 3.5 );
-            scene.add( directionalLight2 );
-            il = 0;
+        function start(){
+            document.getElementById("stext").style.zIndex="1000";
+            document.getElementById("magicPointer").style.border="1px solid #191919";
+            document.getElementById("magicPointer").style.color="#191919";
+            passedIntro = 1;
+            navbar.style.left="0vw";
+            document.getElementById('bar').style.left="5.1vw";
+            intro.style.opacity="100%";
+            document.getElementById('imgbg').style.opacity="100%";
+            document.addEventListener("mousemove", parallax3d);
+            function parallax3d(e){
+                const x = (window.innerWidth - e.pageX) / 20;
+                const y = (window.innerHeight - e.pageY) / 20;
+                backgroundParallax.style.transform="translate("+x+"px, "+y+"px)";
+            }
+            backgroundParallax.style.opacity="100%";
         }
-    }
-    function start3d(){
-        document.getElementById('navbar').style.left="0vw";
-        document.getElementById('bar').style.left="5.1vw";
-        document.getElementById('bgmodel').style.opacity="10%";
-        document.getElementById('s--c').style.opacity="100%";
-        scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight);
-        camera.position.z = 1;
-        camera.position.y = 1;
-
-        var renderer = new THREE.WebGLRenderer({alpha: true});
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.getElementById('bgmodel').appendChild(renderer.domElement);
-
-        directionalLight = new THREE.DirectionalLight( 0xc8cdd2 , 0.5 );
-        scene.add( directionalLight );
-        directionalLight2 = new THREE.DirectionalLight( 0xff0064, 3.5 );
-        scene.add( directionalLight2 );
-
-        directionalLight2.position.set(35, 2, 1);
-
-        var model;
-        
-        const loader = new THREE.GLTFLoader();
-        loader.load('img/bgmodel.glb', function(gltf){
-            model = gltf.scene.children[0];
-            model.scale.set(0.50, 0.50, 0.50);
-            scene.add(model);
-            renderer.render(scene, camera);
-        });
-        function animate(){
-                requestAnimationFrame(animate);
-                renderer.render(scene, camera);
-        }
-        animate();
-        window.addEventListener('resize', function()   {
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-            renderer.setSize(width, height);
-            renderer.render(scene, camera);
-        });
-
-        document.addEventListener("mousemove", parallax3d);
-        function parallax3d(e){
-            const x = (window.innerWidth - e.pageX) / 100;
-            const y = (window.innerHeight - e.pageY) / 100;
-            model.rotation.y = (x/10);
-            model.rotation.x = (y/5);
-            renderer.render(scene, camera);
-        }
-    }
     </script>
 </body>
 </html>
