@@ -16,18 +16,53 @@
     <div id="stext">
         <h2 id="circle">SELECCIONA UNA OPCIÓNㅤㅤ</h2>
     </div>
+    <img src="img/menuc.svg" class="pmenu" id="pmenu" onclick="displaymenu()">
+    <img src="img/close.svg" id="pclose" onclick="hidemenu(0)">
+    <div class="phone--menu" id="phone--menu">
+        <div class="overflowX">
+        <h2 onclick="OpenMenu(1, 1); hidemenu(1)">Sobre mí</h2>
+        </div>
+
+        <div class="overflowX">
+        <h2 onclick="OpenMenu(2, 1); hidemenu(1)">Trabajos</h2>
+        </div>
+
+        <div class="overflowX">
+        <h2 onclick="hidemenu(1); faq11(2)">Este proyecto</h2>
+        </div>
+
+        <div class="overflowX" id="aCase">
+            <a href="cv.pdf" download>Curriculum</a>
+        </div>
+
+        <div class="overflowX" id="breakline">
+            <h2>Contacto</h2>
+        </div>
+
+        <div class="overflowXt">
+            <h3>MAIL @jmel.business1@gmail.com</h3>
+        </div>
+
+        <div class="overflowXt">
+            <h3>GIT SSxArg</h3>
+        </div>
+
+        <div class="overflowXt">
+            <h3>IG  @juaan.xs</h3>
+        </div>
+    </div>
     <img src="img/close2.svg" id="close2" class="magic-hover ahover" onclick="close2()">
     <div id="this">
         <h2>portfolio v3</h2>
         <h3>+10hs de código. <br>
-            +5 tazas de café <br>
-            Tecnologías usadas <br> ThreeJs + parallax (fondo) <br> jQuery.
+            +5 tazas de café. <br>
+            Tecnologías usadas <br> ThreeJs + parallax (fondo). <br> jQuery.
         </h3>
     </div>
     <div class="tools" id="tools">
         <h3></h3>
         <h2 onclick="faq11(1)">Este proyecto</h2>
-        <a href="cv.pdf" download onclick="faq11(2)">Curriculum Vitae</a>
+        <a href="cv.pdf" download>Curriculum Vitae</a>
         <h2 onclick="closex(1)">Cerrar</h2>
     </div>
     <div class="faq1 menuHover" id="faq1">
@@ -49,7 +84,7 @@
         <!-- HOME -->
         <div class="containerex" id="s--c">
             <div class="l--brand">
-                <h3>PROGRAMADOR FRONT-END</h3>
+                <h3>FRONT-END</h3>
                 <h2>JUAN</h2>
             </div>
             <div class="r--brand">
@@ -57,9 +92,9 @@
                 <h3>PORTFOLIO 2021</h3>
             </div>
             <div class="xmenu">
-                <h2 class="magic-hover" onclick="OpenMenu(1)">SOBRE MÍ</h2>
-                <h2 class="magic-hover" onclick="OpenMenu(2)">TRABAJOS</h2>
-                <h2 class="magic-hover" onclick="OpenMenu(3)">CONTÁCTAME</h2>
+                <h2 class="magic-hover" onclick="OpenMenu(1, 0)">SOBRE MÍ</h2>
+                <h2 class="magic-hover" onclick="OpenMenu(2, 0)">TRABAJOS</h2>
+                <h2 class="magic-hover" onclick="OpenMenu(3, 0)">CONTÁCTAME</h2>
             </div>
         </div>
         <img src="img/close.svg" id="close" class="closeimg magic-hover ahover" onclick="CloseMenu(viewing)">
@@ -138,6 +173,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/mouse.js"></script>
     <script>
+        const optionss = document.querySelectorAll('.overflowX > h2, .overflowXt > h3, .overflowX > a');
+
+        function displaymenu(){
+            optionss.forEach((item, i) => {
+                item.style.marginTop="0vw";
+            });
+            document.getElementById('amenu').style.display="none";
+            document.getElementById('bmenu').style.display="none";
+            document.getElementById('this').style.display="none";
+
+            document.getElementById('pmenu').style.transform= "scale(0)";
+            document.getElementById('pmenu').style.zIndex="-1";
+            document.getElementById('pclose').style.zIndex="100000000";
+            document.getElementById('pclose').style.transform="scale(1)";
+            document.getElementById('s--c').style.opacity="0%";
+            document.getElementById('phone--menu').style.zIndex="100000";
+        }
+        function hidemenu(x){
+            optionss.forEach((item, i) => {
+                item.style.marginTop="10vh";
+            });
+            document.getElementById('pmenu').style.transform= "scale(1)";
+            document.getElementById('pclose').style.transform="scale(0)";
+            document.getElementById('pmenu').style.zIndex="1000000000";
+            document.getElementById('pclose').style.zIndex="-1";
+            if(x == 0){
+            document.getElementById('s--c').style.opacity="100%";
+            }
+            document.getElementById('phone--menu').style.zIndex="-1";
+        }
+    </script>
+    <script>
         var c2ex = 0;
         function close2(){
             if(c2ex == 1){
@@ -153,13 +220,18 @@
         const faq1 = document.getElementById('faq1');
         const faq2 = document.getElementById('faq2');
         function faq11(x){
+            document.getElementById('this').style.display="";
+            intro.style.opacity="0%";
             if(x == 1){
                 document.getElementById('tools').style.bottom="-50vw";//mostrar
                 document.getElementById('this').style.bottom="5vw";
                 document.getElementById('close2').style.bottom="10vw";
                 c2ex = 1;
-            } else {
-
+            }
+            if(x == 2) { //Mobile
+                document.getElementById('this').style.bottom="50vh";
+                
+                c2ex = 1;
             }
         }
         var r = 0;
@@ -216,33 +288,49 @@
         const sM = document.getElementById('amenu');
         const tM = document.getElementById('bmenu');
         const cM = document.getElementById('cmenu');
-        function OpenMenu(x){
+        function OpenMenu(x, z){
             tab = 1;
             viewing = x;
             intro.style.opacity="0%";
-            setTimeout(abremenu(x), 1000);
+            setTimeout(abremenu(x, z), 1000);
         }
-        function abremenu(x){
+        function abremenu(x, z){
+            if(z == 0) {
             equis.style.right="5vw";
+            }
             document.getElementById('navbar').style.left="-5.1vw";
             document.getElementById('bar').style.left="-0.1vw";
             if(x == 1){
                 sM.style.zIndex="200";
                 sM.style.opacity="100%";
+                document.getElementById('amenu').style.display="";
                 document.getElementById('circle').innerHTML="SOBRE MI ㅤㅤSOBRE MI";
                 circleup();
+                if(z == 1){
+                    tM.style.opacity="0%";
+                    cM.style.opacity="0%";
+                }
             }
             if(x == 2){
                 tM.style.zIndex="2";
                 tM.style.opacity="100%";
+                document.getElementById('bmenu').style.display="";
                 document.getElementById('circle').innerHTML="TRABAJOS  ㅤㅤTRABAJOS";
                 circleup();
+                if(z == 1){
+                    sM.style.opacity="0%";
+                    cM.style.opacity="0%";
+                }
             }
             if(x == 3){
                 cM.style.zIndex="2";
                 cM.style.opacity="100%";
                 document.getElementById('circle').innerHTML="CONTACTO ㅤㅤCONTACTO";
                 circleup();
+                if(z == 1){
+                    sM.style.opacity="0%";
+                    tM.style.opacity="0%";
+                }
             }
         }
         //CLOSE FUNCS
@@ -306,6 +394,8 @@
     <script>
         function togglestart(){
             document.getElementById('gointro').style.marginTop="10vh";
+            document.getElementById('pmenu').style.opacity="100%";
+            document.getElementById('pmenu').style.zIndex="10000";
             setTimeout(start3d, 1000);
         }
     </script>
