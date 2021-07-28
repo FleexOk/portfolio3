@@ -501,6 +501,9 @@ body {
   margin-top: 5vh;
   transition: 0.9s ease-in-out;
 }
+.bg--music {
+  opacity: 0%;
+}
 @media only screen and (max-width: 768px) {
   .l--brand {
     margin-top: 20vh;
@@ -587,7 +590,7 @@ body {
   }
   #bg3d {
     width: 100vh;
-    left: -23vh;
+    left: -23vw;
     top: 20vh;
     z-index: 1;
   }
