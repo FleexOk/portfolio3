@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;1,300;1,500&family=Italiana&family=Cormorant+Garamond:wght@300;600&family=Roboto+Mono:wght@300;700&family=Roboto:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
     <!-- META -->
     <title>Juan Melnechuk | Portfolio</title>
+    <link rel="shortcut icon" href="img/logo.png">
 </head>
 <body ondragstart="return false" onselectstart="return false" oncontextmenu="return false">
     <div id="stext">
@@ -28,7 +29,7 @@
         </div>
 
         <div class="overflowX">
-        <h2 onclick="OpenMobileMenu(3);">ESTE PROYECTO</h2>
+        <h2 onclick="OpenMobileMenu(0); faq11(2)">ESTE PROYECTO</h2>
         </div>
 
         <div class="overflowX" id="aCase">
@@ -156,8 +157,8 @@
             <div class="card">
                 <div id="sh">
                     <h2>+54 9 0376 437-5921</h2>
-                    <h2>+54 9 0376 437-5921</h2>
-                    <h2>+54 9 0376 437-5921</h2>
+                    <h2>+54 9 0376 437-8459</h2>
+                    <h2>JUAAN.XS</h2>
                 </div>
             </div>
         </div>
@@ -266,18 +267,13 @@
             switch(menu){
                 case 1: 
                     tM.style.opacity="0%";
-                    cM.style.opacity="0%";
                     break;
                 case 2: 
-                    sM.style.opacity="0%";
-                    cM.style.opacity="0%";
-                    break;
-                case 3: 
-                    tM.style.opacity="0%";
                     sM.style.opacity="0%";
                     break;
             }
             HideMobileOptions();
+            if   (menu != 3)
             OpenDesktopMenu(menu);
         }
 
@@ -301,6 +297,7 @@
             tM.style.opacity="0%";
             sM.style.opacity="0%";
             cM.style.opacity="0%";
+            thisproject.style.bottom="-70vh";
         }
 
 
@@ -335,13 +332,13 @@
         function faq11(x){
             thisproject.style.display="";
             if(x == 1){
-                tools.style.bottom="-50vw";//mostrar
+                tools.style.bottom="-50vw";
                 thisproject.style.bottom="5vw";
                 closex2.style.bottom="10vw";
                 c2ex = 1;
             }
-            if(x == 2) { //Mobile
-                thisproject.style.bottom="50vh";
+            if(x == 2) {
+                thisproject.style.bottom="20vh";
                 
                 c2ex = 1;
             }
