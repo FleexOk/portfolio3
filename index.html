@@ -393,7 +393,7 @@
         function start(){
             document.getElementById("stext").style.zIndex="100";
             document.getElementById("stext").style.color="#191919";
-
+            initMusic();
             var x = window.matchMedia("(max-width: 700px)")
             if(!x.matches){
             document.getElementById("magicPointer").style.border="1px solid #191919";
@@ -411,6 +411,14 @@
                 backgroundParallax.style.transform="translate("+x+"px, "+y+"px)";
             }
             backgroundParallax.style.opacity="100%";
+        }
+    </script>
+    <script>
+        function initMusic(){
+        	var sonido = document.createElement("iframe");
+            sonido.setAttribute("src","img/bgmusic.mp3");
+            sonido.className += " bg--music"
+            document.body.appendChild(sonido);
         }
     </script>
 </body>
